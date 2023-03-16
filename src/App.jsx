@@ -4,6 +4,7 @@ import ContactUs from "./pages/ContactUs";
 import { Routes, Route } from "react-router-dom";
 import Careers from "./pages/Careers";
 import Footer from "./components/Footer";
+import "./firebase";
 
 function App() {
   return (
