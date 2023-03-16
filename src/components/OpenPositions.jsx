@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { JS, Marketing } from "../../constants/AppData";
-import UploadFile from "./uploadFile";
+import SpinnerLoader from "./SpinnerLoader";
 
 export default function OpenPositions() {
   const [showInput, setShowInput] = useState({});
@@ -39,7 +39,7 @@ export default function OpenPositions() {
                       </button>
                     </div>
                   </div>
-                  {showInput && <UploadFile />}
+                  {showInput && <SpinnerLoader />}
                 </div>
               ))}
             </div>
