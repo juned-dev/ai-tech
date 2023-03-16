@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { pageLinks } from "../../constants/AppData";
 import MobileMenu from "./MobileMenu";
 
@@ -10,9 +10,9 @@ export default function Header() {
     <header className="sticky top-0 z-30 bg-white shadow-m py-2">
       <div className="container">
         <div className="flex justify-between items-center">
-          <div className="flex items-center">
+          <Link to={"/"} className="flex items-center">
             <img className="h-12" src={"/assets/images/logo.png"}></img>
-          </div>
+          </Link>
           <div>
             <ul className=" flex space-x-6 text-neutral-600 text-lg font-medium">
               {pageLinks.map((element, index) => (
