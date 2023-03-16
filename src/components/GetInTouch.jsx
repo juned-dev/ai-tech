@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import useFirebase from "../hooks/use-firebase";
+import SpinnerLoader from "./SpinnerLoader";
 export default function GetInTouch() {
   const { postContactDetails } = useFirebase();
   const [loader, setLoader] = useState(false);
@@ -97,11 +98,11 @@ export default function GetInTouch() {
                       <div className="mt-2 ml-1 text-xs text-red-500 text-left">{errors.msg}</div>
                     ) : null}
                   </div>
-                  <div>
-                    <div>
+                  <div className="bg-warning-500 text-white text-lg px-10 py-3 rounded w-full border border-warning-500 hover:bg-white hover:text-warning-500 transition-all flex  items-center">
+                    <div className="flex items-center">
                       <button
+                        className="text-center mr-2"
                         type="submit"
-                        className="bg-warning-500 text-white text-lg px-10 py-3 rounded w-full border border-warning-500 hover:bg-white hover:text-warning-500 transition-all"
                         onClick={() => {
                           handleSubmit();
                         }}
