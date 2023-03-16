@@ -84,3 +84,21 @@ export const CaseStudiesData = [
     link: "",
   },
 ];
+
+export const JS = [
+  {
+    title: "Javascript developer",
+    desc: "We are looking for javascript developer who can collaborate with cross-functional teams to design,develop, and deploy high-quality software solutions that meet business needs.",
+  },
+  {
+    title: "Lead Ux Developer -React JS",
+    desc: "We are seeking an experienced Lead UX Developer with expertise in React JS to join our team. The ideal candidate will have a passion for creating intuitive and engaging user experiences and be capable of leading and mentoring a team of developers.",
+  },
+];
+
+export const Marketing = [
+  {
+    title: "Technical Content Marketing Manager",
+    desc: "Our management team is in search of a technical content marketer to join our team and help accelerate the growth as we continue to develop and expand our innovative technology in Al and ML business services.",
+  },
+];
