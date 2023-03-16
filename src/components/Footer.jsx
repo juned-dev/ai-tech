@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import useFirebase from "../hooks/use-firebase";
+import SpinnerLoader from "./SpinnerLoader";
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+  const { postEmail } = useFirebase();
+  const [loader, setLoader] = useState(false);
   return (
     <footer className="bg-secondary-200 md:rounded-tl-[205px] md:rounded-br-[205px] py-12">
       <div className="container">
@@ -28,14 +33,26 @@ export default function Footer() {
             className="text-center pl-8 md:pl-16 pr-4 py-2 rounded-tl-[22px] rounded-bl-[22px] bg-neutral-250 text-neutral-600 outline-none border border-neutral-250 
                     focus:border-warning-500"
             placeholder="Input your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
-          <button
-            className="text-xs bg-warning-500 text-white rounded-tr-[22px] rounded-br-[22px] px-3 py-2 border
-                 border-warning-500 hover:bg-white hover:text-warning-500 
-                hover:border hover:border-warning-500 transition-all"
+          <div
+            className="text-xs cursor-pointer bg-warning-500 text-white rounded-tr-[22px] rounded-br-[22px] px-3 py-2 border border-warning-500 hover:bg-white hover:text-warning-500 
+                hover:border hover:border-warning-500 transition-all flex flex-row"
+            onClick={() => {
+              setLoader(true);
+              postEmail(email).then((data) => {
+                setTimeout(() => {
+                  setLoader(false);
+                }, [300]);
+              });
+            }}
           >
-            Subscribe
-          </button>
+            <div className="flex items-center mr-2">
+              <button>Subscribe</button>
+            </div>
+            <div className="flex items-center">{loader && <SpinnerLoader />}</div>
+          </div>
         </div>
 
         <div className="grid sm:grid-cols-3 sm:text-center gap-3 max-w-3xl mx-auto mb-11">

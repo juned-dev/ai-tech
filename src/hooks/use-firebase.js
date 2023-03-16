@@ -1,6 +1,7 @@
 import { addDoc, collection } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import storage from "../firebase";
+import db from "../firebase";
 
 const useFirebase = () => {
   const uploadResume = async (file, setPercent) => {
@@ -17,7 +18,7 @@ const useFirebase = () => {
         () => {
           // download url
           getDownloadURL(uploadTask.snapshot.ref).then((url) => {
-            console.log(url);
+            // console.log(url);
           });
         }
       );
