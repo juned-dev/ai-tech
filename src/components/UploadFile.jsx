@@ -14,18 +14,6 @@ export default function UploadFile({ item, setShowInput }) {
   const { uploadResume } = useFirebase();
   const [error, setError] = useState("");
 
-  function formatBytes(bytes, decimals = 1) {
-    if (!+bytes) return "0 Bytes";
-
-    const k = 1024;
-    const dm = decimals < 0 ? 0 : decimals;
-    const sizes = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
-
-    const i = Math.floor(Math.log(bytes) / Math.log(k));
-
-    return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))}`;
-  }
-
   useEffect(() => {
     percent == 100 && setShowSuccessMsg(true);
   }, [percent]);
@@ -37,14 +25,13 @@ export default function UploadFile({ item, setShowInput }) {
     setShowSuccessMsg(false);
     setShowInput(false);
   }
-
   useEffect(() => {
     if (showSuccessMsg) {
-      setLoader(false);
+      // setLoader(false);
       showSuccessMsg &&
         setTimeout(() => {
           reset();
-        }, [3000]);
+        }, 3000);
     }
   }, [showSuccessMsg]);
 
@@ -52,7 +39,7 @@ export default function UploadFile({ item, setShowInput }) {
     if (error) {
       setTimeout(() => {
         setError(false);
-      }, [3000]);
+      }, 3000);
     }
   }, [selectedImg, error]);
 
@@ -124,7 +111,7 @@ export default function UploadFile({ item, setShowInput }) {
                         id="file-upload"
                         name="file-upload"
                         type="file"
-                        // accept="application/pdf,image/jpeg, image/jpg"
+                        accept="application/pdf,image/jpeg, image/jpg"
                         className="sr-only"
                       />
                     </label>
@@ -165,29 +152,31 @@ export default function UploadFile({ item, setShowInput }) {
               <div className="text-center">
                 <button
                   onClick={() => {
-                    setLoader(true);
                     if (
                       selectedImg.type == "application/pdf" ||
                       selectedImg.type == "image/jpeg" ||
                       selectedImg.type == "image/jpg"
                     ) {
-                      const size = formatBytes(selectedImg.size);
+                      const size = selectedImg.size / 1024 ** 2;
                       if (size < 4) {
+                        setLoader(true);
                         uploadResume(selectedImg, setPercent, item)
                           .then((data) => {})
                           .catch((err) => {
                             console.log(err);
                           })
                           .finally(() => {
-                            setLoader(false);
+                            setTimeout(() => {
+                              setLoader(false);
+                            }, 2000);
                           });
                       } else {
                         setError(true);
                       }
                     } else {
                       setError(true);
+                      setLoader(false);
                     }
-                    setLoader(false);
                   }}
                   className="border border-success-700 h-[50px] w-[173px] mx-auto text-success-700 bg-neutral-150 py-[12px] px-14 hover:text-neutral-150 hover:bg-success-700 transition duration-300 rounded"
                 >

@@ -12,7 +12,11 @@ export default function Footer() {
   const [toast, setToast] = useState(false);
 
   useEffect(() => {
-    email && setDisabled(false);
+    if (email) {
+      setDisabled(false);
+    } else {
+      setDisabled(true);
+    }
   }, [email]);
 
   useEffect(() => {
