@@ -1,12 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import useFirebase from "../hooks/use-firebase";
 import SpinnerLoader from "./SpinnerLoader";
+import Toast from "./Toast";
 
 export default function GetInTouch() {
   const { postContactDetails } = useFirebase();
   const [loader, setLoader] = useState(false);
+  const [toast, setToast] = useState(false);
+
+  useEffect(() => {
+    if (toast) {
+      setTimeout(() => {
+        setToast(false);
+      }, [3000]);
+    }
+  }, [toast]);
 
   const validationSchema = Yup.object().shape({
     name: Yup.string().trim().required("This field is required"),
@@ -34,6 +44,7 @@ export default function GetInTouch() {
         props.setSubmitting(true);
         setLoader(true);
         postContactDetails(name, email, msg).then((data) => {
+          setToast(true);
           setTimeout(() => {
             setLoader(false);
             props.setSubmitting(false);
@@ -115,6 +126,13 @@ export default function GetInTouch() {
                   >
                     {loader ? <SpinnerLoader /> : "Send my message"}
                   </button>
+                  {toast && (
+                    <Toast
+                      variant={"success"}
+                      onClick={() => setToast(false)}
+                      msg="Thanks for reaching out, We will surely reach back to you."
+                    />
+                  )}
                 </div>
               </div>
 

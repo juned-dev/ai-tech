@@ -2,16 +2,26 @@ import { DocumentSnapshot } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import useFirebase from "../hooks/use-firebase";
 import SpinnerLoader from "./SpinnerLoader";
+import Toast from "./Toast";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
   const { postEmail } = useFirebase();
   const [loader, setLoader] = useState(false);
   const [disabled, setDisabled] = useState(true);
+  const [toast, setToast] = useState(false);
 
   useEffect(() => {
     email && setDisabled(false);
   }, [email]);
+
+  useEffect(() => {
+    if (toast) {
+      setTimeout(() => {
+        setToast(false);
+      }, [3000]);
+    }
+  }, [toast]);
 
   return (
     <footer className="bg-secondary-200 md:rounded-tl-[205px] md:rounded-br-[205px] py-12">
@@ -22,7 +32,9 @@ export default function Footer() {
             e.preventDefault();
             setLoader(true);
             postEmail(email)
-              .then((data) => {})
+              .then((data) => {
+                setToast(true);
+              })
               .catch((error) => {
                 console.error("Error:", error);
               })
@@ -56,11 +68,12 @@ export default function Footer() {
                     focus:border-warning-500"
             placeholder="Input your email"
             value={email}
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
             onChange={(e) => setEmail(e.target.value)}
           />
           <button
             type="submit"
-            className={`text-xs text-white rounded-tr-[22px] rounded-br-[22px] px-3 py-2 border transition-all text-center h-[42px] w-[88px] flex-shrink-0  bg-warning-500 border-warning-500 hover:bg-white hover:text-warning-500 hover:border hover:border-warning-500  ${
+            className={`text-xs text-white rounded-tr-[22px] rounded-br-[22px] px-3 py-2 border transition-all text-center h-[42px] w-[88px] flex-shrink-0  bg-warning-500 border-warning-500 hover:bg-white hover:text-warning-500 hover:border hover:border-warning-500 disabled:opacity-70 disabled:hover:bg-warning-500 disabled:hover:text-white disabled:cursor-default  ${
               !disabled ? "cursor-pointer" : " opacity-70"
             }`}
             disabled={disabled}
@@ -68,6 +81,7 @@ export default function Footer() {
             {loader ? <SpinnerLoader /> : "Subscribe"}
           </button>
         </form>
+        {toast && <Toast variant={"success"} onClick={() => setToast(false)} msg="Thanks for subscribing" />}
 
         <div className="grid sm:grid-cols-3 sm:text-center gap-3 max-w-3xl mx-auto mb-11">
           <div className="md:text-center">
