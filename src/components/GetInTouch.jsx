@@ -43,14 +43,20 @@ export default function GetInTouch() {
         let { name, email, msg } = values;
         props.setSubmitting(true);
         setLoader(true);
-        postContactDetails(name, email, msg).then((data) => {
-          setToast(true);
-          setTimeout(() => {
+        postContactDetails(name, email, msg)
+          .then((data) => {
+            setToast(true);
+            setTimeout(() => {
+              props.resetForm();
+            }, [300]);
+          })
+          .catch((err) => {
+            console.log(err);
+          })
+          .finally(() => {
             setLoader(false);
             props.setSubmitting(false);
-            props.resetForm();
-          }, [300]);
-        });
+          });
       }}
     >
       {({

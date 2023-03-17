@@ -17,9 +17,7 @@ const useFirebase = () => {
         (err) => console.log(err),
         () => {
           // download url
-          getDownloadURL(uploadTask.snapshot.ref).then((url) => {
-            // console.log(url);
-          });
+          getDownloadURL(uploadTask.snapshot.ref).then((url) => {});
         }
       );
     } catch (e) {
