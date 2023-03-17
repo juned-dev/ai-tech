@@ -60,10 +60,8 @@ export default function Footer() {
           />
           <button
             type="submit"
-            className={`text-xs text-white rounded-tr-[22px] rounded-br-[22px] px-3 py-2 border transition-all text-center h-[42px] w-[88px] flex-shrink-0 ${
-              !disabled
-                ? " bg-warning-500 border-warning-500 cursor-pointer hover:bg-white hover:text-warning-500 hover:border hover:border-warning-500 "
-                : "bg-neutral-200 border-neutral-400"
+            className={`text-xs text-white rounded-tr-[22px] rounded-br-[22px] px-3 py-2 border transition-all text-center h-[42px] w-[88px] flex-shrink-0  bg-warning-500 border-warning-500 hover:bg-white hover:text-warning-500 hover:border hover:border-warning-500  ${
+              !disabled ? "cursor-pointer" : " opacity-70"
             }`}
             disabled={disabled}
           >

@@ -30,7 +30,7 @@ export default function EmailUs() {
               type="email"
               readOnly={true}
               onClick={() => (window.location = "mailto:yourmail@domain.com")}
-              className="outline-none focus:outline-none border-b border-b-neutral-900 pl-14 pr-10 py-2 w-full focus:border-warning-500 transition-all"
+              className="outline-none cursor-pointer focus:outline-none border-b border-b-neutral-900 pl-14 pr-10 py-2 w-full focus:border-warning-500 transition-all"
               value="contact@mlconsultancies.com"
               mailto="contact@mlconsultancies.com"
             />
