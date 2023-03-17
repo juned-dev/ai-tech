@@ -132,13 +132,15 @@ export default function GetInTouch() {
                   >
                     {loader ? <SpinnerLoader /> : "Send my message"}
                   </button>
-                  {toast && (
-                    <Toast
-                      variant={"success"}
-                      onClick={() => setToast(false)}
-                      msg="Thanks for reaching out, We will surely reach back to you."
-                    />
-                  )}
+                  <div className="mt-3">
+                    {toast && (
+                      <Toast
+                        variant={"success"}
+                        onClick={() => setToast(false)}
+                        msg="Thanks for reaching out, We will surely reach back to you."
+                      />
+                    )}
+                  </div>
                 </div>
               </div>
 
