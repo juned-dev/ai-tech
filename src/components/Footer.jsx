@@ -42,16 +42,13 @@ export default function Footer() {
             onClick={() => {
               setLoader(true);
               postEmail(email)
-                .then((data) => {
-                  console.log(data);
-                })
+                .then((data) => {})
                 .catch((error) => {
                   console.error("Error:", error);
                 })
                 .finally(() => {
-                  setTimeout(() => {
-                    setLoader(false);
-                  }, [300]);
+                  setLoader(false);
+                  setEmail("");
                 });
             }}
           >
