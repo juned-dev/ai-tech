@@ -1,16 +1,17 @@
 import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
 import { getFirestore } from "firebase/firestore";
+import { Config } from "./Config";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDt4Mvj-U7blXiV15DPsfzH2U4OuNxjFp8",
-  authDomain: "ai-technologies-website-22a10.firebaseapp.com",
-  databaseURL: "https://ai-technologies-website-22a10-default-rtdb.firebaseio.com",
-  projectId: "ai-technologies-website-22a10",
-  storageBucket: "ai-technologies-website-22a10.appspot.com",
-  messagingSenderId: "474191953367",
-  appId: "1:474191953367:web:ed86327d1cb05298a75f92",
-  measurementId: "G-NR3FY6W735",
+  apiKey: `${Config.APIKEY}`,
+  authDomain: `${Config.AUTHDOMAIN}`,
+  databaseURL: `${Config.DATABASE_URL}`,
+  projectId: `${Config.PROJECT_ID}`,
+  storageBucket: `${Config.STORAGE_BUCKET}`,
+  messagingSenderId: `${Config.MESSAGING_SENDER_ID}`,
+  appId: `${Config.APP_ID}`,
+  measurementId: `${Config.MEASUREMENT_ID}`,
 };
 
 // Initialize Firebase
