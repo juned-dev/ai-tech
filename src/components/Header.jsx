@@ -18,7 +18,8 @@ export default function Header() {
               {pageLinks.map((element, index) => (
                 <div key={index} className="hidden md:block">
                   <li className="h-full text-neutral-600 flex">
-                    {element.name == "Services" || element.name == "Case Studies" ? (
+                    {element.name == "Services" ||
+                    element.name == "Case Studies" ? (
                       <a
                         href={element.link}
                         className="inline-flex  hover:text-warning-500  items-center border-b-4 border-b-transparent"
@@ -55,7 +56,11 @@ export default function Header() {
                 stroke="currentColor"
                 className="w-6 h-6"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
               </svg>
             </button>
 
