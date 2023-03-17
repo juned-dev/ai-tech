@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function EmailUs() {
   return (
@@ -28,6 +29,7 @@ export default function EmailUs() {
             <input
               type="email"
               readOnly={true}
+              onClick={() => (window.location = "mailto:yourmail@domain.com")}
               className="outline-none focus:outline-none border-b border-b-neutral-900 pl-14 pr-10 py-2 w-full focus:border-warning-500 transition-all"
               value="contact@mlconsultancies.com"
               mailto="contact@mlconsultancies.com"

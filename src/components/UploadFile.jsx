@@ -19,12 +19,21 @@ export default function UploadFile({ item, setShowInput }) {
   function reset() {
     setHideImage(true);
     setPercent(0);
-    selectedImg(null);
+    setSelectedImg(null);
     setShowSuccessMsg(false);
+    setShowInput(false);
   }
-  function clear() {
-    // showSuccessMsg(false);
-  }
+
+  useEffect(() => {
+    if (showSuccessMsg) {
+      setLoader(false);
+      showSuccessMsg &&
+        setTimeout(() => {
+          reset();
+        }, [3000]);
+    }
+  }, [showSuccessMsg]);
+
   return (
     <div>
       <div className="border-b pb-8 mb-8 max-w-lg mx-auto animate-fade">
@@ -69,8 +78,7 @@ export default function UploadFile({ item, setShowInput }) {
           </div>
         ) : (
           <>
-            {/* upload_file-component   */}
-            {!hideImage ? (
+            {
               <div className="flex max-w-lg justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6 mx-auto mb-6">
                 <div className="space-y-1 text-center">
                   <svg
@@ -92,7 +100,7 @@ export default function UploadFile({ item, setShowInput }) {
                       htmlFor="file-upload"
                       className="relative cursor-pointer rounded-md bg-white font-medium text-primary-500 focus-within:outline-none hover:opacity-80"
                     >
-                      <span>{selectedImg.name}</span>
+                      <span>{!hideImage ? `${selectedImg.name}` : " Upload a file"}</span>
                       <input
                         onChange={(e) => {
                           setSelectedImage(URL.createObjectURL(e.target.files[0]));
@@ -102,65 +110,24 @@ export default function UploadFile({ item, setShowInput }) {
                         id="file-upload"
                         name="file-upload"
                         type="file"
+                        accept="application/pdf,image/jpeg, image/jpg"
                         className="sr-only"
                       />
                     </label>
                     <p className="pl-1"></p>
                   </div>
+                  <p className="text-xs text-gray-500">In JPG, JPEG, PDF format </p>
                 </div>
               </div>
-            ) : (
-              <div className="flex max-w-lg justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6 mx-auto mb-6">
-                <div className="space-y-1 text-center">
-                  <svg
-                    className="mx-auto h-12 w-12 text-gray-400"
-                    stroke="currentColor"
-                    fill="none"
-                    viewBox="0 0 48 48"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    ></path>
-                  </svg>
-                  <div className="flex justify-center text-sm text-gray-600">
-                    <label
-                      htmlFor="file-upload"
-                      className="relative cursor-pointer rounded-md bg-white font-medium text-primary-500 focus-within:outline-none hover:opacity-80"
-                    >
-                      <span>Upload a file</span>
-                      <input
-                        onChange={(e) => {
-                          setSelectedImage(URL.createObjectURL(e.target.files[0]));
-                          setSelectedImg(e.target.files[0]);
-                          setHideImage(false);
-                        }}
-                        id="file-upload"
-                        name="file-upload"
-                        type="file"
-                        className="sr-only"
-                      />
-                    </label>
-                    <p className="pl-1"></p>
-                  </div>
-                  <p className="text-xs text-gray-500">In PNG, JPG, PDF format </p>
-                </div>
-              </div>
-            )}
+            }
+
             {/* submit-button   */}
             {selectedImage && (
               <div className="text-center">
                 <button
                   onClick={() => {
                     setLoader(true);
-                    uploadResume(selectedImg, setPercent, item).then((data) => {
-                      setTimeout(() => {
-                        setLoader(false);
-                      }, [300]);
-                    });
+                    uploadResume(selectedImg, setPercent, item).then((data) => {});
                   }}
                   className="border border-success-700 h-[50px] w-[173px] mx-auto text-success-700 bg-neutral-150 py-[12px] px-14 hover:text-neutral-150 hover:bg-success-700 transition duration-300 rounded"
                 >
