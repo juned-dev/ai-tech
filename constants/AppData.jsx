@@ -55,7 +55,7 @@ export const services = [
 export const CaseStudiesData = [
   {
     img: "/assets/images/case-studies-img-1.png",
-    heading: " Digital Transformation for Automotive Industry",
+    heading: "Digital Transformation for Automotive Industry",
     desc: "  The automotive industry is rapidly changing, and one of the significant transformations is the shift towards digitalization. The emergence of embedded systems in modern vehicles has made it possible to control and configure various components using software applications. This case study explores how a  leading automotive company leveraged digital transformation to develop a software application that can  configure and control multiple embedded devices.",
     link: "",
   },
@@ -87,18 +87,42 @@ export const CaseStudiesData = [
 
 export const JS = [
   {
+    id: 1,
     title: "Javascript developer",
     desc: "We are looking for javascript developer who can collaborate with cross-functional teams to design,develop, and deploy high-quality software solutions that meet business needs.",
   },
   {
+    id: 2,
     title: "Lead Ux Developer -React JS",
+    desc: "We are seeking an experienced Lead UX Developer with expertise in React JS to join our team. The ideal candidate will have a passion for creating intuitive and engaging user experiences and be capable of leading and mentoring a team of developers.",
+  },
+];
+
+export const JS2 = [
+  {
+    id: 3,
+    title: "Javascript developer2",
+    desc: "We are looking for javascript developer who can collaborate with cross-functional teams to design,develop, and deploy high-quality software solutions that meet business needs.",
+  },
+  {
+    id: 4,
+    title: "Lead Ux Developer -React JS2",
     desc: "We are seeking an experienced Lead UX Developer with expertise in React JS to join our team. The ideal candidate will have a passion for creating intuitive and engaging user experiences and be capable of leading and mentoring a team of developers.",
   },
 ];
 
 export const Marketing = [
   {
+    id: 5,
     title: "Technical Content Marketing Manager",
     desc: "Our management team is in search of a technical content marketer to join our team and help accelerate the growth as we continue to develop and expand our innovative technology in Al and ML business services.",
   },
 ];
+
+export const UploadResumeInitValues = {
+  1: false,
+  2: false,
+  3: false,
+  4: false,
+  5: false,
+};
