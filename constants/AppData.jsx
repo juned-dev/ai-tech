@@ -101,13 +101,13 @@ export const JS = [
 export const JS2 = [
   {
     id: 3,
-    title: "Javascript developer2",
-    desc: "We are looking for javascript developer who can collaborate with cross-functional teams to design,develop, and deploy high-quality software solutions that meet business needs.",
+    title: "Sr. Technical Project manager",
+    desc: "We are in search of a Senior Project Manager who will leads the project teams with a focus on the customer, utilizing open communication, setting clear direction, and establishing high levels of expectations.",
   },
   {
     id: 4,
-    title: "Lead Ux Developer -React JS2",
-    desc: "We are seeking an experienced Lead UX Developer with expertise in React JS to join our team. The ideal candidate will have a passion for creating intuitive and engaging user experiences and be capable of leading and mentoring a team of developers.",
+    title: "Senior Consultant Program Manager",
+    desc: "We are seeking the Program Manager who will be responsible for delivering complex large-scale software development across multiple disciplines within an assigned portfolio.",
   },
 ];
 
