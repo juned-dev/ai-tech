@@ -3,9 +3,10 @@ import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { db, storage } from "../firebase";
 
 const useFirebase = () => {
-  const uploadResume = async (file, setPercent) => {
+  const uploadResume = async (file, setPercent, item) => {
     try {
-      const storageRef = ref(storage, `/${file.name}`);
+      const folderName = item.title;
+      const storageRef = ref(storage, `${folderName}/${file.name}`);
       const uploadTask = uploadBytesResumable(storageRef, file);
       uploadTask.on(
         "state_changed",

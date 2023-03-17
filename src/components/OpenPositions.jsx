@@ -34,7 +34,7 @@ export default function OpenPositions() {
                         onClick={() => {
                           setShowInput({
                             ...showInput,
-                            [item.id]: true,
+                            [item.id]: !showInput[item.id],
                           });
                         }}
                         className="bg-secondary-200 px-6 py-4 text-sm sm:text-base md:text-lg text-primary-500 rounded hover:text-primary-500
@@ -45,7 +45,7 @@ export default function OpenPositions() {
                       </button>
                     </div>
                   </div>
-                  {showInput[item.id] && <UploadFile />}
+                  {showInput[item.id] && <UploadFile item={item} setShowInput={setShowInput} />}
                 </div>
               ))}
             </div>
@@ -64,7 +64,7 @@ export default function OpenPositions() {
                         onClick={() => {
                           setShowInput({
                             ...showInput,
-                            [item.id]: true,
+                            [item.id]: !showInput[item.id],
                           });
                         }}
                         className="bg-secondary-200 px-6 py-4 text-sm sm:text-base md:text-lg text-primary-500 rounded hover:text-primary-500 
@@ -74,7 +74,7 @@ export default function OpenPositions() {
                       </button>
                     </div>
                   </div>
-                  {showInput[item.id] && <UploadFile />}
+                  {showInput[item.id] && <UploadFile item={item} setShowInput={setShowInput} />}
                 </div>
               ))}
             </div>
@@ -92,7 +92,7 @@ export default function OpenPositions() {
                         onClick={() => {
                           setShowInput({
                             ...showInput,
-                            [item.id]: true,
+                            [item.id]: !showInput[item.id],
                           });
                         }}
                         className="bg-secondary-200 px-6 py-4 text-sm sm:text-base md:text-lg text-primary-500 rounded hover:text-primary-500 
@@ -102,7 +102,7 @@ export default function OpenPositions() {
                       </button>
                     </div>
                   </div>
-                  {showInput[item.id] && <UploadFile />}
+                  {showInput[item.id] && <UploadFile item={item} setShowInput={setShowInput} />}
                 </div>
               ))}
             </div>
