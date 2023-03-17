@@ -14,8 +14,11 @@ export default function GetInTouch() {
       .email()
       .required("This field is required")
       .matches(/@[^.]*\./),
-    msg: Yup.string().required("This field is required"),
+    msg: Yup.string()
+      .required("This field is required")
+      .matches(/.{5,}/, "Message should contain at least 5 characters"),
   });
+
   return (
     <Formik
       initialValues={{
@@ -103,6 +106,7 @@ export default function GetInTouch() {
                     type="submit"
                     onClick={() => {
                       handleSubmit();
+                      resetForm();
                     }}
                     className="bg-warning-500 text-white text-lg px-10 py-3 rounded w-full border border-warning-500 hover:bg-white hover:text-warning-500 transition-all flex  items-center justify-center"
                   >
