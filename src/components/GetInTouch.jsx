@@ -9,12 +9,14 @@ export default function GetInTouch() {
   const [loader, setLoader] = useState(false);
 
   const validationSchema = Yup.object().shape({
-    name: Yup.string().required("This field is required"),
+    name: Yup.string().trim().required("This field is required"),
     email: Yup.string()
+      .trim()
       .email()
       .required("This field is required")
       .matches(/@[^.]*\./),
     msg: Yup.string()
+      .trim()
       .required("This field is required")
       .matches(/.{5,}/, "Message should contain at least 5 characters"),
   });
