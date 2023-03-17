@@ -95,12 +95,13 @@ export default function UploadFile({ item, setShowInput }) {
                       strokeLinejoin="round"
                     ></path>
                   </svg>
-                  <div className="flex justify-center text-sm text-gray-600">
+                  <div className="flex justify-center text-sm text-gray-600 space-x-2">
                     <label
                       htmlFor="file-upload"
                       className="relative cursor-pointer rounded-md bg-white font-medium text-primary-500 focus-within:outline-none hover:opacity-80"
                     >
-                      <span>{!hideImage ? `${selectedImg.name}` : " Upload a file"}</span>
+                      <span>{!hideImage ? `${selectedImg.name}` : "Upload a file"}</span>
+
                       <input
                         onChange={(e) => {
                           setSelectedImage(URL.createObjectURL(e.target.files[0]));
@@ -114,6 +115,27 @@ export default function UploadFile({ item, setShowInput }) {
                         className="sr-only"
                       />
                     </label>
+                    {!hideImage && (
+                      <svg
+                        onClick={() => {
+                          setSelectedImg(null);
+                          setHideImage(true);
+                        }}
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="w-6 h-6 cursor-pointer"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                    )}
+
                     <p className="pl-1"></p>
                   </div>
                   <p className="text-xs text-gray-500">In JPG, JPEG, PDF format </p>
