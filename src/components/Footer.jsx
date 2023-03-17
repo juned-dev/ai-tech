@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { DocumentSnapshot } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
 import useFirebase from "../hooks/use-firebase";
 import SpinnerLoader from "./SpinnerLoader";
 
@@ -6,11 +7,32 @@ export default function Footer() {
   const [email, setEmail] = useState("");
   const { postEmail } = useFirebase();
   const [loader, setLoader] = useState(false);
+  const [disabled, setDisabled] = useState(true);
+
+  useEffect(() => {
+    email && setDisabled(false);
+  }, [email]);
+
   return (
     <footer className="bg-secondary-200 md:rounded-tl-[205px] md:rounded-br-[205px] py-12">
       <div className="container">
         <p className="font-bold text-neutral-700 text-xl text-center mb-4">Subscribe to our newsletter</p>
-        <div className="flex justify-center mb-8 max-w-[330px] mx-auto relative">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            setLoader(true);
+            postEmail(email)
+              .then((data) => {})
+              .catch((error) => {
+                console.error("Error:", error);
+              })
+              .finally(() => {
+                setLoader(false);
+                setEmail("");
+              });
+          }}
+          className="flex justify-center mb-8 max-w-[330px] mx-auto relative"
+        >
           <div className="absolute left-0 top-1/2 -translate-y-1/2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -37,24 +59,17 @@ export default function Footer() {
             onChange={(e) => setEmail(e.target.value)}
           />
           <button
-            className="text-xs cursor-pointer bg-warning-500 text-white rounded-tr-[22px] rounded-br-[22px] px-3 py-2 border border-warning-500 hover:bg-white hover:text-warning-500 
-                hover:border hover:border-warning-500 transition-all text-center h-[42px] w-[88px] flex-shrink-0"
-            onClick={() => {
-              setLoader(true);
-              postEmail(email)
-                .then((data) => {})
-                .catch((error) => {
-                  console.error("Error:", error);
-                })
-                .finally(() => {
-                  setLoader(false);
-                  setEmail("");
-                });
-            }}
+            type="submit"
+            className={`text-xs text-white rounded-tr-[22px] rounded-br-[22px] px-3 py-2 border transition-all text-center h-[42px] w-[88px] flex-shrink-0 ${
+              !disabled
+                ? " bg-warning-500 border-warning-500 cursor-pointer hover:bg-white hover:text-warning-500 hover:border hover:border-warning-500 "
+                : "bg-neutral-200 border-neutral-400"
+            }`}
+            disabled={disabled}
           >
             {loader ? <SpinnerLoader /> : "Subscribe"}
           </button>
-        </div>
+        </form>
 
         <div className="grid sm:grid-cols-3 sm:text-center gap-3 max-w-3xl mx-auto mb-11">
           <div className="md:text-center">

@@ -34,7 +34,8 @@ export default function GetInTouch() {
         postContactDetails(name, email, msg).then((data) => {
           setTimeout(() => {
             setLoader(false);
-            props.setSubmitting(true);
+            props.setSubmitting(false);
+            props.resetForm();
           }, [300]);
         });
       }}
@@ -106,9 +107,9 @@ export default function GetInTouch() {
                     type="submit"
                     onClick={() => {
                       handleSubmit();
-                      // resetForm();
                     }}
-                    className="bg-warning-500 text-white text-lg px-10 py-3 rounded w-full border border-warning-500 hover:bg-white hover:text-warning-500 transition-all flex  items-center justify-center"
+                    disabled={isSubmitting}
+                    className={`bg-warning-500 text-white text-lg px-10 py-3 rounded w-full border border-warning-500 hover:bg-white hover:text-warning-500 transition-all flex  items-center justify-center `}
                   >
                     {loader ? <SpinnerLoader /> : "Send my message"}
                   </button>
