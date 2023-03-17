@@ -41,11 +41,18 @@ export default function Footer() {
                 hover:border hover:border-warning-500 transition-all flex flex-row"
             onClick={() => {
               setLoader(true);
-              postEmail(email).then((data) => {
-                setTimeout(() => {
-                  setLoader(false);
-                }, [300]);
-              });
+              postEmail(email)
+                .then((data) => {
+                  console.log(data);
+                })
+                .catch((error) => {
+                  console.error("Error:", error);
+                })
+                .finally(() => {
+                  setTimeout(() => {
+                    setLoader(false);
+                  }, [300]);
+                });
             }}
           >
             <div className="flex items-center mr-2">

@@ -1,7 +1,6 @@
 import { addDoc, collection } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
-import storage from "../firebase";
-import db from "../firebase";
+import { db, storage } from "../firebase";
 
 const useFirebase = () => {
   const uploadResume = async (file, setPercent) => {

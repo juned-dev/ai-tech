@@ -40,6 +40,7 @@ export default function OpenPositions() {
                         className="bg-secondary-200 px-6 py-4 text-sm sm:text-base md:text-lg text-primary-500 rounded hover:text-primary-500
                                  hover:bg-primary-150 transition-all w-full"
                       >
+                        {/* {showInput} */}
                         Apply now
                       </button>
                     </div>
