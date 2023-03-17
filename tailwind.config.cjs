@@ -63,6 +63,15 @@ module.exports = {
       borderRadius: {
         m: "2px",
       },
+      animation: {
+        fade: "fadeIn 0.35s ease-in",
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 100 },
+        },
+      },
     },
   },
   plugins: [],

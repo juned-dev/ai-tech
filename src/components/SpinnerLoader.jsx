@@ -2,10 +2,10 @@ import React from "react";
 
 const SpinnerLoader = ({ className }) => {
   return (
-    <div className={`animate-fade text-center h-[15px] w-[17px] ${className}`}>
+    <div className={`animate-fade text-center h-[15px] w-[17px] mx-auto ${className ? className : ""}`}>
       <svg
         role="status"
-        className="animate-spin  h-[15px] w-[17px] text-gray-200 dark:text-gray-600 fill-blue-100"
+        className="animate-spin  h-[15px] w-[17px] text-gray-200 fill-gray-500"
         viewBox="0 0 100 101"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

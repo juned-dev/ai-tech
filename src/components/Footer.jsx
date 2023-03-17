@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className="bg-secondary-200 md:rounded-tl-[205px] md:rounded-br-[205px] py-12">
       <div className="container">
         <p className="font-bold text-neutral-700 text-xl text-center mb-4">Subscribe to our newsletter</p>
-        <div className="flex justify-center mb-8 max-w-[280px] mx-auto relative">
+        <div className="flex justify-center mb-8 max-w-[330px] mx-auto relative">
           <div className="absolute left-0 top-1/2 -translate-y-1/2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -30,15 +30,15 @@ export default function Footer() {
 
           <input
             type="email"
-            className="text-center pl-8 md:pl-16 pr-4 py-2 rounded-tl-[22px] rounded-bl-[22px] bg-neutral-250 text-neutral-600 outline-none border border-neutral-250 
+            className="pl-8 md:pl-20 pr-4 py-2 rounded-tl-[22px] rounded-bl-[22px] bg-neutral-250 text-neutral-600 outline-none border border-neutral-250 
                     focus:border-warning-500"
             placeholder="Input your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <div
+          <button
             className="text-xs cursor-pointer bg-warning-500 text-white rounded-tr-[22px] rounded-br-[22px] px-3 py-2 border border-warning-500 hover:bg-white hover:text-warning-500 
-                hover:border hover:border-warning-500 transition-all flex flex-row"
+                hover:border hover:border-warning-500 transition-all text-center h-[42px] w-[88px] flex-shrink-0"
             onClick={() => {
               setLoader(true);
               postEmail(email)
@@ -52,11 +52,8 @@ export default function Footer() {
                 });
             }}
           >
-            <div className="flex items-center mr-2">
-              <button>Subscribe</button>
-            </div>
-            <div className="flex items-center">{loader && <SpinnerLoader />}</div>
-          </div>
+            {loader ? <SpinnerLoader /> : "Subscribe"}
+          </button>
         </div>
 
         <div className="grid sm:grid-cols-3 sm:text-center gap-3 max-w-3xl mx-auto mb-11">

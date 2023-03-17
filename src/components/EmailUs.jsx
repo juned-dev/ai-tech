@@ -27,8 +27,10 @@ export default function EmailUs() {
             </div>
             <input
               type="email"
+              readOnly={true}
               className="outline-none focus:outline-none border-b border-b-neutral-900 pl-14 pr-10 py-2 w-full focus:border-warning-500 transition-all"
-              placeholder="contact@mlconsultancies.com"
+              value="contact@mlconsultancies.com"
+              mailto="contact@mlconsultancies.com"
             />
           </div>
         </div>

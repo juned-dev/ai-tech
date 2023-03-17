@@ -27,9 +27,9 @@ export default function UploadFile({ item, setShowInput }) {
   }
   return (
     <div>
-      <div className="border-b pb-8 mb-8">
+      <div className="border-b pb-8 mb-8 max-w-lg mx-auto animate-fade">
         {showSuccessMsg ? (
-          <div>
+          <div className="animate-fade">
             {/* success-alert-message  */}
             <div className="rounded-md bg-green-50 p-4 max-w-xl mx-auto">
               <div className="flex">
@@ -146,7 +146,7 @@ export default function UploadFile({ item, setShowInput }) {
                     </label>
                     <p className="pl-1"></p>
                   </div>
-                  <p className="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
+                  <p className="text-xs text-gray-500">In PNG, JPG, PDF format </p>
                 </div>
               </div>
             )}
@@ -162,13 +162,10 @@ export default function UploadFile({ item, setShowInput }) {
                       }, [300]);
                     });
                   }}
-                  className="border border-success-700 text-success-700 bg-neutral-150 py-[12px] px-14 hover:text-neutral-150 hover:bg-success-700 transition duration-300 rounded"
+                  className="border border-success-700 h-[50px] w-[173px] mx-auto text-success-700 bg-neutral-150 py-[12px] px-14 hover:text-neutral-150 hover:bg-success-700 transition duration-300 rounded"
                 >
-                  Submit
+                  <div>{loader ? <SpinnerLoader /> : "Submit"} </div>
                 </button>
-                {/* <div className="flex items-center">
-              {loader && <SpinnerLoader />}
-            </div> */}
               </div>
             )}
           </>
