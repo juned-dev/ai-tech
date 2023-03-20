@@ -1,6 +1,7 @@
 import React from "react";
 import { services } from "../../constants/AppData";
 import Heading from "./Heading";
+
 export default function Services() {
   return (
     <div id="services" className="container scroll-mt-12 ">
