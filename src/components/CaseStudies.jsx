@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from "react";
+import React, { useState } from "react";
 import CaseStudiesCard from "./CaseStudiesCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import { CaseStudiesData } from "../../constants/AppData";
 import { useSwiper } from "swiper/react";
 export default function CaseStudies() {
+
   const [activeIndex, setActiveIndex] = useState(0);
   return (
     <div className="pt-10 pb-10 bg-neutral-100 scroll-mt-12" id="case-studies">

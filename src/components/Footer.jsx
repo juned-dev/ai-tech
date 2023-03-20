@@ -1,4 +1,3 @@
-import { DocumentSnapshot } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import useFirebase from "../hooks/use-firebase";
 import SpinnerLoader from "./SpinnerLoader";
@@ -30,9 +29,7 @@ export default function Footer() {
   return (
     <footer className="bg-secondary-200 md:rounded-tl-[205px] md:rounded-br-[205px] py-12">
       <div className="container">
-        <p className="font-bold text-neutral-700 text-xl text-center mb-4">
-          Subscribe to our newsletter
-        </p>
+        <p className="font-bold text-neutral-700 text-xl text-center mb-4">Subscribe to our newsletter</p>
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -87,31 +84,19 @@ export default function Footer() {
             {loader ? <SpinnerLoader /> : "Subscribe"}
           </button>
         </form>
-        {toast && (
-          <Toast
-            variant={"success"}
-            onClick={() => setToast(false)}
-            msg="Thanks for subscribing"
-          />
-        )}
+        {toast && <Toast variant={"success"} onClick={() => setToast(false)} msg="Thanks for subscribing" />}
 
         <div className="grid sm:grid-cols-3 sm:text-center gap-3 max-w-3xl mx-auto mb-11">
           <div className="md:text-center">
             <p className="text-xl font-bold text-neutral-700 mb-4">Services</p>
             <ul>
               <li className="mb-3">
-                <a
-                  href="#"
-                  className="text-sm text-neutral-700 hover:opacity-60 transition-all"
-                >
+                <a href="#" className="text-sm text-neutral-700 hover:opacity-60 transition-all">
                   Features
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-sm text-neutral-700 hover:opacity-60 transition-all"
-                >
+                <a href="#" className="text-sm text-neutral-700 hover:opacity-60 transition-all">
                   Products
                 </a>
               </li>
@@ -119,15 +104,10 @@ export default function Footer() {
           </div>
 
           <div className="md:text-center">
-            <p className="text-xl font-bold text-neutral-700 mb-4 ">
-              Resources
-            </p>
+            <p className="text-xl font-bold text-neutral-700 mb-4 ">Resources</p>
             <ul>
               <li className="mb-3">
-                <a
-                  href="#"
-                  className="text-sm text-neutral-700 hover:opacity-60 transition-all"
-                >
+                <a href="#" className="text-sm text-neutral-700 hover:opacity-60 transition-all">
                   Blog
                 </a>
               </li>
@@ -138,18 +118,12 @@ export default function Footer() {
             <p className="text-xl font-bold text-neutral-700 mb-4">Company</p>
             <ul>
               <li className="mb-3">
-                <a
-                  href="#"
-                  className="text-sm text-neutral-700 hover:opacity-60 transition-all"
-                >
+                <a href="#" className="text-sm text-neutral-700 hover:opacity-60 transition-all">
                   About us
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className=" text-sm text-neutral-700 hover:opacity-60 transition-all"
-                >
+                <a href="#" className=" text-sm text-neutral-700 hover:opacity-60 transition-all">
                   Contact us
                 </a>
               </li>
@@ -159,8 +133,7 @@ export default function Footer() {
 
         <div className="text-sm text-neutral-900 text-center pt-7 border-t border-neutral-300">
           <p>
-            AI Technologies, Inc <a href="">Privacy</a> <a href="">Terms</a>{" "}
-            <a href="">Sitemap</a>
+            AI Technologies, Inc <a href="">Privacy</a> <a href="">Terms</a> <a href="">Sitemap</a>
           </p>
         </div>
       </div>
