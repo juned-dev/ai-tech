@@ -14,11 +14,13 @@ export default function UploadFile({ item, setShowInput }) {
   const { uploadResume } = useFirebase();
   const [error, setError] = useState("");
 
+  // if the percent is 100, show success message
   useEffect(() => {
     percent == 100 && setShowSuccessMsg(true);
   }, [percent]);
 
   function reset() {
+    // reset all the values
     setHideImage(true);
     setPercent(0);
     setSelectedImg(null);
@@ -27,7 +29,7 @@ export default function UploadFile({ item, setShowInput }) {
   }
   useEffect(() => {
     if (showSuccessMsg) {
-      // setLoader(false);
+      // if success message is shown, reset all states after 3 seconds
       showSuccessMsg &&
         setTimeout(() => {
           reset();
@@ -35,6 +37,7 @@ export default function UploadFile({ item, setShowInput }) {
     }
   }, [showSuccessMsg]);
 
+  // Use useEffect to automatically hide the toast notification after 3 seconds
   useEffect(() => {
     if (error) {
       setTimeout(() => {
@@ -48,6 +51,7 @@ export default function UploadFile({ item, setShowInput }) {
       <div className="border-b pb-8 mb-8 max-w-lg mx-auto animate-fade">
         {hideImage && <div className="mb-3"> Please submit your resume</div>}
         {showSuccessMsg ? (
+          // if success message is shown, show Toast message
           <Toast
             color=""
             onClick={() => {
@@ -62,6 +66,7 @@ export default function UploadFile({ item, setShowInput }) {
               <div className="flex max-w-lg justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6 mx-auto mb-6">
                 <div className="space-y-1 text-center">
                   {!hideImage ? (
+                    // if an image is selected, show a check mark icon
                     <>
                       <svg
                         className="h-12 w-12 mx-auto text-green-400"

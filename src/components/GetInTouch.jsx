@@ -6,10 +6,14 @@ import SpinnerLoader from "./SpinnerLoader";
 import Toast from "./Toast";
 
 export default function GetInTouch() {
+  // Get the postContactDetails function from the useFirebase hook
   const { postContactDetails } = useFirebase();
+
+  // Use useState to keep track of whether or not to display the spinner loader and toast
   const [loader, setLoader] = useState(false);
   const [toast, setToast] = useState(false);
 
+  // Use useEffect to automatically hide the toast notification after 3 seconds
   useEffect(() => {
     if (toast) {
       setTimeout(() => {
@@ -18,6 +22,7 @@ export default function GetInTouch() {
     }
   }, [toast]);
 
+  // Create a Yup validation schema for the form
   const validationSchema = Yup.object().shape({
     name: Yup.string().trim().required("This field is required"),
     email: Yup.string()
@@ -38,14 +43,20 @@ export default function GetInTouch() {
         email: "",
         msg: "",
       }}
+      // Pass the validation schema to Formik
       validationSchema={validationSchema}
       onSubmit={(values, props) => {
         let { name, email, msg } = values;
+        // Show the spinner loader
         props.setSubmitting(true);
         setLoader(true);
+
+        // Make the request to post the contact details
         postContactDetails(name, email, msg)
           .then((data) => {
+            // Show the success toast notification
             setToast(true);
+            // Reset the form after a short delay
             setTimeout(() => {
               props.resetForm();
             }, [300]);
@@ -54,7 +65,9 @@ export default function GetInTouch() {
             console.log(err);
           })
           .finally(() => {
+            // Hide the spinner loader
             setLoader(false);
+            // Set the form state back to normal
             props.setSubmitting(false);
           });
       }}
