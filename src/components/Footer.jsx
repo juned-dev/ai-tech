@@ -4,8 +4,11 @@ import SpinnerLoader from "./SpinnerLoader";
 import Toast from "./Toast";
 
 export default function Footer() {
-  const [email, setEmail] = useState("");
+  // Get the postEmail function from the useFirebase hook
   const { postEmail } = useFirebase();
+
+  // Set up state variables using the useState hook
+  const [email, setEmail] = useState("");
   const [loader, setLoader] = useState(false);
   const [disabled, setDisabled] = useState(true);
   const [toast, setToast] = useState(false);
@@ -34,11 +37,13 @@ export default function Footer() {
           onSubmit={(e) => {
             e.preventDefault();
             setLoader(true);
+            // Send the email using the postEmail function
             postEmail(email)
               .then((data) => {
                 setToast(true);
               })
               .catch((error) => {
+                // Handle errors here
                 console.error("Error:", error);
               })
               .finally(() => {
@@ -48,6 +53,7 @@ export default function Footer() {
           }}
           className="flex justify-center mb-8 max-w-[330px] mx-auto relative"
         >
+          {/* Email input */}
           <div className="absolute left-4 top-1/2 -translate-y-1/2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -84,11 +90,13 @@ export default function Footer() {
             {loader ? <SpinnerLoader /> : "Subscribe"}
           </button>
         </form>
+        {/* Toast msg after successful entry in firebase */}
         {toast && <Toast variant={"success"} onClick={() => setToast(false)} msg="Thanks for subscribing" />}
 
         <div className="grid sm:grid-cols-3 sm:text-center gap-3 max-w-3xl mx-auto mb-11">
           <div className="md:text-center">
             <p className="text-xl font-bold text-neutral-700 mb-4">Services</p>
+            {/* Footer Links  */}
             <ul>
               <li className="mb-3">
                 <a href="#" className="text-sm text-neutral-700 hover:opacity-60 transition-all">
@@ -130,7 +138,6 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-
         <div className="text-sm text-neutral-900 text-center pt-7 border-t border-neutral-300">
           <p>
             AI Technologies, Inc <a href="">Privacy</a> <a href="">Terms</a> <a href="">Sitemap</a>
