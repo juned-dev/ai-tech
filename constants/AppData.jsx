@@ -80,13 +80,13 @@ export const CaseStudiesData = [
     link: "",
   },
   {
-    img: "/assets/images/case-studies-img-1.png",
+    img: "/assets/images/case-3.jpg",
     heading: "Al for Mining Industry",
     desc: "The role of Artificial Intelligence (AI) in the mining industry is quickly becoming an essential part of modern-day operations. Al technology offers unprecedented levels of efficiency and accuracy across a variety of areas, from mineral exploration and ore body modelling to resource planning and geology mapping. As such, forward-thinking companies are embracing this new technology while actively investing in advanced tools and data science capabilities to stay ahead of the curve and reduce costs without compromising safety, quality or availability.",
     link: "",
   },
   {
-    img: "/assets/images/case-studies-img-1.png",
+    img: "/assets/images/case-2.jpg",
     heading: " Digital Transformation for Automotive Industry",
     desc: "  The automotive industry is rapidly changing, and one of the significant transformations is the shift towards digitalization. The emergence of embedded systems in modern vehicles has made it possible to         control and configure various components using software applications. This case study explores how a              leading automotive company leveraged digital transformation to develop a software application that can              configure and control multiple embedded devices.",
     link: "",

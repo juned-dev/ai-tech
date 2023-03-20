@@ -66,7 +66,9 @@ export default function GetInTouch() {
           })
           .finally(() => {
             // Hide the spinner loader
-            setLoader(false);
+            setTimeout(() => {
+              setLoader(false);
+            }, 1000);
             // Set the form state back to normal
             props.setSubmitting(false);
           });

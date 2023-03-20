@@ -37,6 +37,7 @@ export default function Footer() {
           onSubmit={(e) => {
             e.preventDefault();
             setLoader(true);
+            setDisabled(true);
             // Send the email using the postEmail function
             postEmail(email)
               .then((data) => {
@@ -49,6 +50,7 @@ export default function Footer() {
               .finally(() => {
                 setLoader(false);
                 setEmail("");
+                setDisabled(false);
               });
           }}
           className="flex justify-center mb-8 max-w-[330px] mx-auto relative"
