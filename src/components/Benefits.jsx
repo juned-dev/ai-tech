@@ -23,7 +23,7 @@ export default function Benefits() {
                 alt=""
                 className="mx-auto mb-9 group-hover:-translate-y-4 transition-all"
               />
-              <p className="  text-2xl font-bold text-neutral-700 text-center">Competitive salary & equity</p>
+              <p className="  text-2xl font-bold text-neutral-700 text-center">Heath, dental and vision insurance</p>
             </div>
             <div className="odd:bg-secondary-200 rounded-[20px] px-6 py-12 group">
               <img
@@ -31,7 +31,7 @@ export default function Benefits() {
                 alt=""
                 className="mx-auto mb-9 group-hover:-translate-y-4 transition-all"
               />
-              <p className="  text-2xl font-bold text-neutral-700 text-center">Competitive salary & equity</p>
+              <p className="  text-2xl font-bold text-neutral-700 text-center">Mental health & wellness benefits</p>
             </div>
             <div className="even:bg-neutral-300 rounded-[20px] px-6 py-12 group">
               <img
@@ -39,7 +39,7 @@ export default function Benefits() {
                 alt=""
                 className="mx-auto mb-9 group-hover:-translate-y-4 transition-all"
               />
-              <p className="  text-2xl font-bold text-neutral-700 text-center">Competitive salary & equity</p>
+              <p className="  text-2xl font-bold text-neutral-700 text-center">Flexible work schedule</p>
             </div>
             <div className="odd:bg-secondary-200 rounded-[20px] px-6 py-12 group">
               <img
@@ -47,7 +47,7 @@ export default function Benefits() {
                 alt=""
                 className="mx-auto mb-9 group-hover:-translate-y-4 transition-all"
               />
-              <p className="  text-2xl font-bold text-neutral-700 text-center">Competitive salary & equity</p>
+              <p className="  text-2xl font-bold text-neutral-700 text-center">Work from home</p>
             </div>
             <div className="even:bg-neutral-300 rounded-[20px] px-6 py-12 group">
               <img
@@ -55,7 +55,7 @@ export default function Benefits() {
                 alt=""
                 className="mx-auto mb-9 group-hover:-translate-y-4 transition-all"
               />
-              <p className="  text-2xl font-bold text-neutral-700 text-center">Competitive salary & equity</p>
+              <p className="  text-2xl font-bold text-neutral-700 text-center">Learning & development</p>
             </div>
           </div>
         </div>
