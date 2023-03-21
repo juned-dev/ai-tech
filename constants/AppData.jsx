@@ -1,6 +1,6 @@
 export const pageLinks = [
   {
-    link: "/",
+    link: "",
     name: "Home",
   },
   {
@@ -12,11 +12,11 @@ export const pageLinks = [
     name: "Case Studies",
   },
   {
-    link: "/contact-us",
+    link: "contact-us",
     name: "Contact Us",
   },
   {
-    link: "/careers",
+    link: "careers",
     name: "Careers",
   },
 ];
