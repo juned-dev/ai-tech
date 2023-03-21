@@ -4,8 +4,8 @@ import Heading from "./Heading";
 export default function AboutUs() {
   return (
     <div className="container">
-      <section className="pt-10 pb-4 xl:pb-14">
-        <div className="">
+      <section id="about-us" className="scroll-mt-12  pt-10 pb-4 xl:pb-14">
+        <div>
           <Heading name={"About us"} className="mb-1" />
           <div className="mb-6 flex items-center justify-center ">
             <img className=" pos h-6" src={"/assets/images/curve.svg"} alt="img"></img>

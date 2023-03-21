@@ -63,13 +63,13 @@ const LeftButton = () => {
     </div>
   );
 };
-
 const RightButton = () => {
   const swiper = useSwiper();
+
   return (
     <div
       className={`bg-white p-2 border  w-fit flex justify-center rounded-3xl ${
-        swiper.activeIndex == 2 ? "border-neutral-400" : "border-primary-600 cursor-pointer"
+        swiper.activeIndex == 3 ? "border-neutral-400" : "border-primary-600 cursor-pointer"
       }`}
       onClick={() => swiper.slideNext()}
     >
@@ -79,7 +79,7 @@ const RightButton = () => {
         viewBox="0 0 24 24"
         strokeWidth={2}
         stroke="currentColor"
-        className={`w-6 h-6 ${swiper.activeIndex == 2 ? "text-neutral-400" : "text-primary-600"}`}
+        className={`w-6 h-6 ${swiper.activeIndex == 3 ? "text-neutral-400" : "text-primary-600"}`}
       >
         <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
       </svg>

@@ -86,15 +86,21 @@ export const CaseStudiesData = [
     link: "https://app.gitbook.com/o/KHfcaNLJpb1KpXLcjLMy/s/KoT5tfCdZlKYEgB16QZb/services/digital-transformation",
   },
   {
-    img: "/assets/images/case-2.jpg",
-    heading: " Digital Transformation for Automotive Industry",
-    desc: "  The automotive industry is rapidly changing, and one of the significant transformations is the shift towards digitalization. The emergence of embedded systems in modern vehicles has made it possible to         control and configure various components using software applications. This case study explores how a              leading automotive company leveraged digital transformation to develop a software application that can              configure and control multiple embedded devices.",
+    img: "/assets/images/case-studies-img-1.png",
+    heading: "Digital Transformation for Automotive Industry",
+    desc: "  The automotive industry is rapidly changing, and one of the significant transformations is the shift towards digitalization. The emergence of embedded systems in modern vehicles has made it possible to control and configure various components using software applications. This case study explores how a  leading automotive company leveraged digital transformation to develop a software application that can  configure and control multiple embedded devices.",
     link: "https://app.gitbook.com/o/KHfcaNLJpb1KpXLcjLMy/s/KoT5tfCdZlKYEgB16QZb/services/digital-transformation",
   },
   {
-    img: "/assets/images/case-studies-img-1.png",
-    heading: " Digital Transformation for Automotive Industry",
-    desc: "  The automotive industry is rapidly changing, and one of the significant transformations is the shift towards digitalization. The emergence of embedded systems in modern vehicles has made it possible to         control and configure various components using software applications. This case study explores how a              leading automotive company leveraged digital transformation to develop a software application that can              configure and control multiple embedded devices.",
+    img: "/assets/images/case-2.jpg",
+    heading: "Self-Organizing Networks(SON) for telecom industry",
+    desc: "The telecommunications industry is increasingly using (SON) systems that incorporate artificial intelligence (AI) and machine learning (ML) technologies. These systems are designed to improve demand forcast network performance, reduce maintenance costs, and increase customer satisfaction.SON systems use Al and ML algorithms to analyze network performance data in real-time, identify areas of congestion or poor signal quality, and automatically adjust network parameters to optimize performance.",
+    link: "https://app.gitbook.com/o/KHfcaNLJpb1KpXLcjLMy/s/KoT5tfCdZlKYEgB16QZb/services/digital-transformation",
+  },
+  {
+    img: "/assets/images/case-3.jpg",
+    heading: "Al for Mining Industry",
+    desc: "The role of Artificial Intelligence (AI) in the mining industry is quickly becoming an essential part of modern-day operations. Al technology offers unprecedented levels of efficiency and accuracy across a variety of areas, from mineral exploration and ore body modelling to resource planning and geology mapping. As such, forward-thinking companies are embracing this new technology while actively investing in advanced tools and data science capabilities to stay ahead of the curve and reduce costs without compromising safety, quality or availability.",
     link: "https://app.gitbook.com/o/KHfcaNLJpb1KpXLcjLMy/s/KoT5tfCdZlKYEgB16QZb/services/digital-transformation",
   },
 ];

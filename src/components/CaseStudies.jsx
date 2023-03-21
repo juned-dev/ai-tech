@@ -15,7 +15,8 @@ export default function CaseStudies() {
               Discover Real-World Insight! Our case studies provide innovative perspective to help you achieve success.
             </p>
             <a
-              href="#"
+              href="https://app.gitbook.com/o/KHfcaNLJpb1KpXLcjLMy/s/KoT5tfCdZlKYEgB16QZb/services/digital-transformation"
+              target="_blank"
               className="text-sm sm:text-base text-success-800 underline hover:text-warning-500 transition-all"
             >
               View more

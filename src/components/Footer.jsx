@@ -93,7 +93,7 @@ export default function Footer() {
           </button>
         </form>
         {/* Toast msg after successful entry in firebase */}
-        {toast && <Toast variant={"success"} onClick={() => setToast(false)} msg="Thanks for subscribing" />}
+        {toast && <Toast variant={"success"} onClick={() => setToast(false)} msg="Thank you" />}
 
         <div className="grid sm:grid-cols-3 sm:text-center gap-3 max-w-3xl mx-auto mb-11">
           <div className="md:text-center">
@@ -117,7 +117,11 @@ export default function Footer() {
             <p className="text-xl font-bold text-neutral-700 mb-4 ">Resources</p>
             <ul>
               <li className="mb-3">
-                <a href="#" className="text-sm text-neutral-700 hover:opacity-60 transition-all">
+                <a
+                  href="https://app.gitbook.com/o/KHfcaNLJpb1KpXLcjLMy/s/KoT5tfCdZlKYEgB16QZb/services/digital-transformation"
+                  target={"_blank"}
+                  className="text-sm text-neutral-700 hover:opacity-60 transition-all"
+                >
                   Blog
                 </a>
               </li>
@@ -128,12 +132,15 @@ export default function Footer() {
             <p className="text-xl font-bold text-neutral-700 mb-4">Company</p>
             <ul>
               <li className="mb-3">
-                <a href="#" className="text-sm text-neutral-700 hover:opacity-60 transition-all">
+                <a href="#about-us" className="text-sm text-neutral-700 hover:opacity-60 transition-all">
                   About us
                 </a>
               </li>
               <li>
-                <a href="#" className=" text-sm text-neutral-700 hover:opacity-60 transition-all">
+                <a
+                  href="http://localhost:5173/contact-us"
+                  className=" text-sm text-neutral-700 hover:opacity-60 transition-all"
+                >
                   Contact us
                 </a>
               </li>
