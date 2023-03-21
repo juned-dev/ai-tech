@@ -18,8 +18,12 @@ export default function Services() {
                   <img className="max-h-44" src={element.img} alt="img" />
                 </div>
               </div>
-              <a href={element.link} className="text-tertiary4-500 hover:text-warning-500 flex underline">
-                "Start Exploring"
+              <a
+                href={element.link}
+                target="_blank"
+                className="text-tertiary4-500 hover:text-warning-500 flex underline"
+              >
+                "Learn more"
               </a>
             </div>
           ))}

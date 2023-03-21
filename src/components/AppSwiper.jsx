@@ -29,7 +29,7 @@ export default function AppSwiper({ data, setActiveIndex }) {
       >
         {data.map((item, index) => (
           <SwiperSlide className="my-4 px-2 h-auto" key={index}>
-            <CaseStudiesCard title={item.heading} image={item.img} desc={item.desc} link={item} />
+            <CaseStudiesCard title={item.heading} image={item.img} desc={item.desc} link={item.link} />
           </SwiperSlide>
         ))}
         <div className="flex items-center space-x-4 justify-end">
