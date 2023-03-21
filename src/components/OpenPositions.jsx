@@ -7,7 +7,7 @@ export default function OpenPositions() {
 
   return (
     <div>
-      <section className="pt-10 pb-10" id="open-positions">
+      <section className="pt-10 pb-10 scroll-mt-12" id="open-positions">
         <div className="container">
           <div className="pb-3.5">
             <p className="font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-title text-neutral-700 text-center mb-7">
