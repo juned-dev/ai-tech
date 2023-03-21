@@ -1,11 +1,28 @@
-import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { pageLinks } from "../../constants/AppData";
 import MobileMenu from "./MobileMenu";
+import { HashLink } from "react-router-hash-link";
 
 export default function Header() {
   const [showDrover, setShowDrover] = useState(false);
+  const [activeMenu, setActiveMenu] = useState("Home");
+  const router = useLocation();
 
+  useEffect(() => {
+    const { hash, pathname } = router;
+    if (hash) {
+      if (hash == "#services") setActiveMenu("Services");
+      else if (hash == "#case-studies") setActiveMenu("Case Studies");
+      else if (hash == "#about-us") setActiveMenu("Home");
+    } else {
+      if (pathname == "/contact-us") setActiveMenu("Contact Us");
+      else if (pathname == "/careers") setActiveMenu("Careers");
+      else if (pathname == "/") {
+        setActiveMenu("Home");
+      }
+    }
+  }, [router]);
   return (
     <header className="sticky top-0 z-30 bg-white shadow-m py-2">
       <div className="container">
@@ -18,26 +35,16 @@ export default function Header() {
               {pageLinks.map((element, index) => (
                 <div key={index} className="hidden md:block">
                   <li className="h-full text-neutral-600 flex">
-                    {/* {element.name == "Services" || element.name == "Case Studies" ? (
-                      <a
-                        href={element.link}
-                        className="inline-flex  hover:text-warning-500  items-center border-b-4 border-b-transparent"
-                      >
-                        {element.name}
-                      </a>
-                    ) : ( */}
-                    <NavLink
+                    <HashLink
                       to={element.link}
-                      end
-                      className={({ isActive }) =>
-                        isActive
+                      className={`${
+                        activeMenu == element.name
                           ? "inline-flex items-center border-b-4 border-b-warning-500"
                           : "inline-flex hover:text-warning-500 items-center border-b-4 border-b-transparent"
-                      }
+                      }`}
                     >
                       {element.name}
-                    </NavLink>
-                    {/* )} */}
+                    </HashLink>
                   </li>
                 </div>
               ))}

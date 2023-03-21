@@ -7,4 +7,5 @@ export const Config = {
   MESSAGING_SENDER_ID: import.meta.env.VITE_MESSAGING_SENDER_ID,
   APP_ID: import.meta.env.VITE_APP_ID,
   MEASUREMENT_ID: import.meta.env.VITE_MEASUREMENT_ID,
+  BASE_URL: window.location.origin,
 };

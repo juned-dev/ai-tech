@@ -48,7 +48,7 @@ export default function UploadFile({ item, setShowInput }) {
 
   return (
     <div>
-      <div className="border-b pb-8 mb-8 max-w-lg mx-auto animate-fade">
+      <div className="border-b mt-8 max-w-lg mx-auto animate-fade">
         {hideImage && <div className="mb-3"> Please submit your resume</div>}
         {showSuccessMsg ? (
           // if success message is shown, show Toast message
@@ -103,7 +103,7 @@ export default function UploadFile({ item, setShowInput }) {
                   <div className="flex justify-center text-sm text-gray-600 space-x-2">
                     <label
                       htmlFor="file-upload"
-                      className="relative cursor-pointer rounded-md bg-white font-medium text-primary-500 focus-within:outline-none hover:opacity-80"
+                      className="relative cursor-pointer rounded-md font-medium text-primary-500 focus-within:outline-none hover:opacity-80"
                     >
                       <span>{!hideImage ? `${selectedImg.name}` : "Upload a file"}</span>
 

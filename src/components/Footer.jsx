@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { HashLink } from "react-router-hash-link";
+import { Config } from "../Config";
 import useFirebase from "../hooks/use-firebase";
 import SpinnerLoader from "./SpinnerLoader";
 import Toast from "./Toast";
@@ -132,9 +134,13 @@ export default function Footer() {
             <p className="text-xl font-bold text-neutral-700 mb-4">Company</p>
             <ul>
               <li className="mb-3">
-                <a href="#about-us" className="text-sm text-neutral-700 hover:opacity-60 transition-all">
+                <HashLink
+                  // onClick={() => location.reload()}
+                  to={`${Config.BASE_URL}#about-us`}
+                  className="text-sm text-neutral-700 hover:opacity-60 transition-all"
+                >
                   About us
-                </a>
+                </HashLink>
               </li>
               <li>
                 <a

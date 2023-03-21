@@ -8,7 +8,7 @@ import WhyUs from "../components/WhyUs";
 export default function Careers() {
   return (
     <div>
-      <section className="bg-career bg-cover h-100 py-20 sm:py-28 xl:py-40">
+      <section className="bg-career bg-cover h-100 py-20 sm:py-28 xl:py-40 lg:min-h-[550px] flex items-center justify-center">
         <div className="container">
           <div className="">
             <p className="font-bold text-3xl sm:text-4xl md:text-5xl xl:text-title text-center mb-7 text-neutral-900">

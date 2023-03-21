@@ -1,14 +1,16 @@
+import { Config } from "../src/Config";
+
 export const pageLinks = [
   {
     link: "",
     name: "Home",
   },
   {
-    link: "http://localhost:5173/#services",
+    link: `${Config.BASE_URL}#services`,
     name: "Services",
   },
   {
-    link: "http://localhost:5173/#case-studies",
+    link: `${Config.BASE_URL}#case-studies`,
     name: "Case Studies",
   },
   {

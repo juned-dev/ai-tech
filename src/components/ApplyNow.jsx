@@ -15,11 +15,11 @@ export default function ApplyNow() {
               Join Us
             </p>
 
-            <div className="flex justify-center items-center md:ml-24 mb-10">
+            <div className="flex justify-center items-center md:ml-24">
               <div className="">
                 <button
                   onClick={() => {
-                    setShowInput(true);
+                    setShowInput(!showInput);
                   }}
                   className="bg-warning-500 text-base rounded-[26px] text-white px-20 py-3 border border-warning-500 hover:bg-white hover:text-warning-500 
                             hover:border hover:border-warning-500 transition-all mt-6 "
