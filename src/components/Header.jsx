@@ -28,6 +28,7 @@ export default function Header() {
                     ) : ( */}
                     <NavLink
                       to={element.link}
+                      end
                       className={({ isActive }) =>
                         isActive
                           ? "inline-flex items-center border-b-4 border-b-warning-500"

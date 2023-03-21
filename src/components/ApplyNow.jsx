@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import UploadFile from "./UploadFile";
 
 export default function ApplyNow() {
+  const [showInput, setShowInput] = useState(false);
+  const item = {
+    title: "All resume",
+  };
   return (
     <div>
       <section className="pt-10 pb-36 ">
@@ -10,11 +15,14 @@ export default function ApplyNow() {
               Join Us
             </p>
 
-            <div className="flex justify-center items-center md:ml-24">
+            <div className="flex justify-center items-center md:ml-24 mb-10">
               <div className="">
                 <button
+                  onClick={() => {
+                    setShowInput(true);
+                  }}
                   className="bg-warning-500 text-base rounded-[26px] text-white px-20 py-3 border border-warning-500 hover:bg-white hover:text-warning-500 
-                            hover:border hover:border-warning-500 transition-all mt-6"
+                            hover:border hover:border-warning-500 transition-all mt-6 "
                 >
                   Apply now
                 </button>
@@ -23,6 +31,7 @@ export default function ApplyNow() {
                 <img src="/assets/images/arrow-round.png" alt="" className="" />
               </div>
             </div>
+            {showInput && <UploadFile item={item} setShowInput={setShowInput} />}
           </div>
         </div>
       </section>
