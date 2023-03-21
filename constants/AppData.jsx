@@ -4,11 +4,11 @@ export const pageLinks = [
     name: "Home",
   },
   {
-    link: "#services",
+    link: "http://localhost:5173/#services",
     name: "Services",
   },
   {
-    link: "#case-studies",
+    link: "http://localhost:5173/#case-studies",
     name: "Case Studies",
   },
   {
