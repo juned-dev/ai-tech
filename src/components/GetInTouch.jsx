@@ -95,7 +95,7 @@ export default function GetInTouch() {
                     <p className="text-base font-bold text-neutral-700 mb-2">Your name</p>
                     <input
                       type="text"
-                      className="text-neutral-400 px-4 py-2 rounded focus:outline-none border border-secondary-300 w-full focus:border-warning-500 transition-all"
+                      className="text-black  px-4 py-2 rounded focus:outline-none border border-secondary-300 w-full focus:border-warning-500 transition-all"
                       placeholder="Full name"
                       value={values.name}
                       onChange={(e) => {
@@ -111,7 +111,7 @@ export default function GetInTouch() {
                     <p className="text-base font-bold text-neutral-700 mb-2">Your email</p>
                     <input
                       type="text"
-                      className="text-neutral-400 px-4 py-2 rounded focus:outline-none border border-secondary-300 w-full focus:border-warning-500 transition-all"
+                      className="text-black px-4 py-2 rounded focus:outline-none border border-secondary-300 w-full focus:border-warning-500 transition-all"
                       placeholder="youremail@emaily.com"
                       value={values.email}
                       onChange={(e) => {
@@ -127,7 +127,7 @@ export default function GetInTouch() {
                     <p className="text-base font-bold text-neutral-700 mb-2">How can we help?</p>
                     <textarea
                       rows="4"
-                      className="text-neutral-400 px-4 py-2 rounded focus:outline-none border border-secondary-300 w-full focus:border-warning-500 transition-all "
+                      className="text-black px-4 py-2 rounded focus:outline-none border border-secondary-300 w-full focus:border-warning-500 transition-all "
                       value={values.msg}
                       onChange={(e) => {
                         setFieldValue("msg", e.target.value);

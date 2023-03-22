@@ -20,6 +20,7 @@ export default function Header() {
       else if (pathname == "/careers") setActiveMenu("Careers");
       else if (pathname == "/") {
         setActiveMenu("Home");
+        window && window.scrollTo(0, 0);
       }
     }
   }, [router]);

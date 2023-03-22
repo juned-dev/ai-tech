@@ -120,7 +120,7 @@ export default function Footer() {
             <ul>
               <li className="mb-3">
                 <a
-                  href="https://app.gitbook.com/o/KHfcaNLJpb1KpXLcjLMy/s/KoT5tfCdZlKYEgB16QZb/services/digital-transformation"
+                  href="https://services.mlconsultancies.com/blogs/page-1"
                   target={"_blank"}
                   className="text-sm text-neutral-700 hover:opacity-60 transition-all"
                 >
