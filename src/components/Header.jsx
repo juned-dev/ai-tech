@@ -68,7 +68,7 @@ export default function Header() {
               </svg>
             </button>
 
-            {showDrover && <MobileMenu setShowDrover={setShowDrover} />}
+            {showDrover && <MobileMenu setShowDrover={setShowDrover} pageLinks={pageLinks} activeMenu={activeMenu} />}
           </div>
         </div>
       </div>

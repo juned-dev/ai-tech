@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-export default function MobileMenu({ setShowDrover }) {
+import { HashLink } from "react-router-hash-link";
+export default function MobileMenu({ setShowDrover, pageLinks, activeMenu }) {
   return (
     <>
       {/* start-mobile-menu   */}
@@ -35,48 +36,20 @@ export default function MobileMenu({ setShowDrover }) {
             }}
             className="divide-y"
           >
-            <li className="p-4">
-              <NavLink
-                to={"/"}
-                className={({ isActive }) =>
-                  isActive
-                    ? "inline-flex items-center text-warning-500"
-                    : "inline-flex hover:text-warning-500 items-center "
-                }
-              >
-                Home
-              </NavLink>
-            </li>
-            <li className="p-4">
-              <a href="#services">Services</a>
-            </li>
-            <li className="p-4">
-              <a href="#case-studies">Case Studies</a>
-            </li>
-            <li className="p-4">
-              <NavLink
-                to={"/contact-us"}
-                className={({ isActive }) =>
-                  isActive
-                    ? "inline-flex items-center  text-warning-500"
-                    : "inline-flex hover:text-warning-500 items-center "
-                }
-              >
-                Contact us
-              </NavLink>
-            </li>
-            <li className="p-4">
-              <NavLink
-                to={"/careers"}
-                className={({ isActive }) =>
-                  isActive
-                    ? "inline-flex items-center  text-warning-500"
-                    : "inline-flex hover:text-warning-500 items-center "
-                }
-              >
-                Careers
-              </NavLink>
-            </li>
+            {pageLinks.map((element, index) => (
+              <li className="p-4">
+                <HashLink
+                  to={element.link}
+                  className={`${
+                    activeMenu == element.name
+                      ? "inline-flex items-center text-warning-500"
+                      : "inline-flex hover:text-warning-500 items-center "
+                  }`}
+                >
+                  {element.name}
+                </HashLink>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
