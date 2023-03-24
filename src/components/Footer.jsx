@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { Config } from "../Config";
 import useFirebase from "../hooks/use-firebase";
@@ -135,7 +136,6 @@ export default function Footer() {
             <ul>
               <li className="mb-3">
                 <HashLink
-                  // onClick={() => location.reload()}
                   to={`${Config.BASE_URL}#about-us`}
                   className="text-sm text-neutral-700 hover:opacity-60 transition-all"
                 >
@@ -143,12 +143,12 @@ export default function Footer() {
                 </HashLink>
               </li>
               <li>
-                <a
-                  href="http://localhost:5173/contact-us"
+                <NavLink
+                  to={`${Config.BASE_URL}/contact-us`}
                   className=" text-sm text-neutral-700 hover:opacity-60 transition-all"
                 >
                   Contact us
-                </a>
+                </NavLink>
               </li>
             </ul>
           </div>
